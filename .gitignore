@@ -1,0 +1,10 @@
+*.pyc
+__pycache__/
+*.egg-info/
+node_modules/
+.DS_Store
+
+# the workspace is built by setup/desk.py; developer_mode re-exports it on every save
+turacoz_service_desk/turacoz_it_service_desk/workspace/
+turacoz_service_desk/turacoz_it_service_desk/number_card/
+turacoz_service_desk/turacoz_it_service_desk/dashboard_chart/

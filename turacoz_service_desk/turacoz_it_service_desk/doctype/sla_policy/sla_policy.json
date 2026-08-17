@@ -1,0 +1,198 @@
+{
+ "actions": [],
+ "autoname": "field:policy_name",
+ "creation": "2026-08-06 16:19:53.206795",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "policy_name",
+  "is_default",
+  "is_active",
+  "cb_sla_1",
+  "holiday_list",
+  "apply_24x7",
+  "apply_to_category",
+  "sb_sla_priority",
+  "priority_rules",
+  "sb_sla_hours",
+  "working_days",
+  "sb_sla_pause",
+  "pause_statuses",
+  "sb_sla_esc",
+  "escalation_rules",
+  "sb_sla_desc",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "policy_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Policy Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "description": "Used when no category or service supplies a policy.",
+   "fieldname": "is_default",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Default Policy"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Active"
+  },
+  {
+   "fieldname": "cb_sla_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Holidays are excluded from SLA elapsed time.",
+   "fieldname": "holiday_list",
+   "fieldtype": "Link",
+   "label": "Holiday List",
+   "options": "Holiday List"
+  },
+  {
+   "default": "0",
+   "fieldname": "apply_24x7",
+   "fieldtype": "Check",
+   "label": "24x7 (ignore working hours)"
+  },
+  {
+   "fieldname": "sb_sla_priority",
+   "fieldtype": "Section Break",
+   "label": "Response & Resolution Targets"
+  },
+  {
+   "fieldname": "priority_rules",
+   "fieldtype": "Table",
+   "label": "Priority Rules",
+   "options": "SLA Priority Rule",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:!doc.apply_24x7",
+   "fieldname": "sb_sla_hours",
+   "fieldtype": "Section Break",
+   "label": "Business Hours"
+  },
+  {
+   "fieldname": "working_days",
+   "fieldtype": "Table",
+   "label": "Working Days",
+   "options": "SLA Working Day"
+  },
+  {
+   "fieldname": "sb_sla_pause",
+   "fieldtype": "Section Break",
+   "label": "Pause Conditions"
+  },
+  {
+   "description": "The SLA clock stops while the ticket sits in any of these statuses and resumes on exit.",
+   "fieldname": "pause_statuses",
+   "fieldtype": "Table",
+   "label": "Pause On These Statuses",
+   "options": "SLA Pause Status"
+  },
+  {
+   "fieldname": "sb_sla_esc",
+   "fieldtype": "Section Break",
+   "label": "Escalation"
+  },
+  {
+   "fieldname": "escalation_rules",
+   "fieldtype": "Table",
+   "label": "Escalation Rules",
+   "options": "SLA Escalation Rule"
+  },
+  {
+   "fieldname": "sb_sla_desc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "apply_to_category",
+   "fieldtype": "Link",
+   "label": "Apply To Category",
+   "options": "IT Service Category"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:57.171896",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "SLA Policy",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Executive"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Engineer"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "policy_name",
+ "track_changes": 1
+}

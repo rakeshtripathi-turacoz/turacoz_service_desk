@@ -1,0 +1,384 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-08-06 16:19:54.892001",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "change_type",
+  "risk",
+  "status",
+  "cb_chg_1",
+  "priority",
+  "category",
+  "requested_by",
+  "change_owner",
+  "ticket",
+  "sb_chg_just",
+  "business_justification",
+  "implementation_plan",
+  "rollback_plan",
+  "testing_plan",
+  "sb_chg_impact",
+  "downtime_required",
+  "downtime_minutes",
+  "planned_start",
+  "planned_end",
+  "cb_chg_2",
+  "actual_start",
+  "actual_end",
+  "affected_services",
+  "sb_chg_approval",
+  "cab_required",
+  "cab_date",
+  "approval_matrix",
+  "approval_status",
+  "current_approval_level",
+  "approvals",
+  "sb_chg_result",
+  "implementation_notes",
+  "validation_result",
+  "rollback_reason",
+  "sb_chg_related",
+  "related_records",
+  "timeline"
+ ],
+ "fields": [
+  {
+   "default": "CHG-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "CHG-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "default": "Normal",
+   "fieldname": "change_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Change Type",
+   "options": "Standard\nNormal\nEmergency",
+   "reqd": 1
+  },
+  {
+   "default": "Medium",
+   "fieldname": "risk",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Risk",
+   "options": "Low\nMedium\nHigh\nCritical",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nSubmitted\nRisk Review\nCAB Approval\nScheduled\nImplementation\nValidation\nCompleted\nClosed\nRolled Back\nRejected\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_chg_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nCritical"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "IT Service Category"
+  },
+  {
+   "fieldname": "requested_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Requested By",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "change_owner",
+   "fieldtype": "Link",
+   "label": "Change Owner",
+   "options": "User"
+  },
+  {
+   "fieldname": "sb_chg_just",
+   "fieldtype": "Section Break",
+   "label": "Justification & Plans"
+  },
+  {
+   "fieldname": "business_justification",
+   "fieldtype": "Text",
+   "label": "Business Justification",
+   "reqd": 1
+  },
+  {
+   "fieldname": "implementation_plan",
+   "fieldtype": "Text",
+   "label": "Implementation Plan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rollback_plan",
+   "fieldtype": "Text",
+   "label": "Rollback Plan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "testing_plan",
+   "fieldtype": "Text",
+   "label": "Testing Plan"
+  },
+  {
+   "fieldname": "sb_chg_impact",
+   "fieldtype": "Section Break",
+   "label": "Impact & Window"
+  },
+  {
+   "default": "0",
+   "fieldname": "downtime_required",
+   "fieldtype": "Check",
+   "label": "Downtime Required"
+  },
+  {
+   "depends_on": "downtime_required",
+   "fieldname": "downtime_minutes",
+   "fieldtype": "Int",
+   "label": "Downtime (minutes)"
+  },
+  {
+   "fieldname": "planned_start",
+   "fieldtype": "Datetime",
+   "label": "Planned Start"
+  },
+  {
+   "fieldname": "planned_end",
+   "fieldtype": "Datetime",
+   "label": "Planned End"
+  },
+  {
+   "fieldname": "cb_chg_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "actual_start",
+   "fieldtype": "Datetime",
+   "label": "Actual Start",
+   "read_only": 1
+  },
+  {
+   "fieldname": "actual_end",
+   "fieldtype": "Datetime",
+   "label": "Actual End",
+   "read_only": 1
+  },
+  {
+   "fieldname": "affected_services",
+   "fieldtype": "Table",
+   "label": "Affected Services",
+   "options": "Change Affected Service"
+  },
+  {
+   "fieldname": "sb_chg_approval",
+   "fieldtype": "Section Break",
+   "label": "Approval"
+  },
+  {
+   "default": "0",
+   "fieldname": "cab_required",
+   "fieldtype": "Check",
+   "label": "CAB Approval Required"
+  },
+  {
+   "depends_on": "cab_required",
+   "fieldname": "cab_date",
+   "fieldtype": "Date",
+   "label": "CAB Meeting Date"
+  },
+  {
+   "fieldname": "approval_matrix",
+   "fieldtype": "Link",
+   "label": "Approval Matrix",
+   "options": "Approval Matrix"
+  },
+  {
+   "default": "Not Required",
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Approval Status",
+   "options": "Not Required\nPending\nApproved\nRejected",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "current_approval_level",
+   "fieldtype": "Int",
+   "label": "Current Approval Level",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approvals",
+   "fieldtype": "Table",
+   "label": "Approvals",
+   "options": "Approval History",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_chg_result",
+   "fieldtype": "Section Break",
+   "label": "Implementation Result"
+  },
+  {
+   "fieldname": "implementation_notes",
+   "fieldtype": "Text",
+   "label": "Implementation Notes"
+  },
+  {
+   "fieldname": "validation_result",
+   "fieldtype": "Select",
+   "label": "Validation Result",
+   "options": "\nSuccessful\nSuccessful with Issues\nFailed\nRolled Back"
+  },
+  {
+   "depends_on": "eval:doc.validation_result=='Rolled Back' || doc.status=='Rolled Back'",
+   "fieldname": "rollback_reason",
+   "fieldtype": "Text",
+   "label": "Rollback Reason"
+  },
+  {
+   "fieldname": "sb_chg_related",
+   "fieldtype": "Section Break",
+   "label": "Related & Timeline"
+  },
+  {
+   "fieldname": "related_records",
+   "fieldtype": "Table",
+   "label": "Related Records",
+   "options": "Related Record"
+  },
+  {
+   "fieldname": "timeline",
+   "fieldtype": "Table",
+   "label": "Timeline",
+   "options": "Ticket Timeline",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ticket",
+   "fieldtype": "Link",
+   "label": "Originating Ticket",
+   "options": "Service Ticket",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:58.078751",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Change Request",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Engineer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Executive"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Department Head"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CISO"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "search_fields": "change_type,risk,status",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1,
+ "track_seen": 1
+}

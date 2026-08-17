@@ -1,0 +1,174 @@
+{
+ "actions": [],
+ "autoname": "format:FB-{ticket}",
+ "creation": "2026-08-06 16:19:56.103383",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "ticket",
+  "requester",
+  "submitted_on",
+  "cb_fb_1",
+  "rating",
+  "would_recommend",
+  "sb_fb_detail",
+  "response_speed",
+  "resolution_quality",
+  "cb_fb_2",
+  "engineer_courtesy",
+  "sb_fb_comments",
+  "comments"
+ ],
+ "fields": [
+  {
+   "fieldname": "ticket",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Ticket",
+   "options": "Service Ticket",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "requester",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Requester",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "submitted_on",
+   "fieldtype": "Datetime",
+   "label": "Submitted On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_fb_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Overall Rating",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "would_recommend",
+   "fieldtype": "Check",
+   "label": "Would Recommend"
+  },
+  {
+   "fieldname": "sb_fb_detail",
+   "fieldtype": "Section Break",
+   "label": "Detailed Ratings"
+  },
+  {
+   "fieldname": "response_speed",
+   "fieldtype": "Rating",
+   "label": "Response Speed"
+  },
+  {
+   "fieldname": "resolution_quality",
+   "fieldtype": "Rating",
+   "label": "Resolution Quality"
+  },
+  {
+   "fieldname": "cb_fb_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "engineer_courtesy",
+   "fieldtype": "Rating",
+   "label": "Engineer Courtesy"
+  },
+  {
+   "fieldname": "sb_fb_comments",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Comments"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:56.103383",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Ticket Feedback",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Engineer"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Executive"
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

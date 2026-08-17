@@ -1,0 +1,274 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-06 16:19:56.762863",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sb_set_modules",
+  "enable_incident_management",
+  "enable_problem_management",
+  "enable_change_management",
+  "cb_set_1",
+  "enable_privileged_access",
+  "enable_knowledge_base",
+  "enable_cmdb",
+  "sb_set_defaults",
+  "default_sla_policy",
+  "default_team",
+  "default_priority",
+  "cb_set_2",
+  "auto_assign",
+  "auto_apply_sla",
+  "derive_priority_from_impact_urgency",
+  "sb_set_auto",
+  "auto_close_enabled",
+  "auto_close_after_days",
+  "reminder_before_breach_percent",
+  "cb_set_3",
+  "auto_create_problem_threshold",
+  "suggest_knowledge_articles",
+  "satisfaction_survey",
+  "sb_set_notify",
+  "send_email_notifications",
+  "send_system_notifications",
+  "cb_set_4",
+  "notify_on_sla_breach",
+  "notify_watchers",
+  "sb_set_audit",
+  "enable_audit_log",
+  "audit_retention_days"
+ ],
+ "fields": [
+  {
+   "fieldname": "sb_set_modules",
+   "fieldtype": "Section Break",
+   "label": "Enabled Modules"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_incident_management",
+   "fieldtype": "Check",
+   "label": "Incident Management"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_problem_management",
+   "fieldtype": "Check",
+   "label": "Problem Management"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_change_management",
+   "fieldtype": "Check",
+   "label": "Change Management"
+  },
+  {
+   "fieldname": "cb_set_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_privileged_access",
+   "fieldtype": "Check",
+   "label": "Privileged Access"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_knowledge_base",
+   "fieldtype": "Check",
+   "label": "Knowledge Base"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_cmdb",
+   "fieldtype": "Check",
+   "label": "CMDB"
+  },
+  {
+   "fieldname": "sb_set_defaults",
+   "fieldtype": "Section Break",
+   "label": "Defaults"
+  },
+  {
+   "fieldname": "default_sla_policy",
+   "fieldtype": "Link",
+   "label": "Default SLA Policy",
+   "options": "SLA Policy"
+  },
+  {
+   "fieldname": "default_team",
+   "fieldtype": "Link",
+   "label": "Default Team",
+   "options": "Service Desk Team"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "default_priority",
+   "fieldtype": "Select",
+   "label": "Default Priority",
+   "options": "Low\nMedium\nHigh\nCritical"
+  },
+  {
+   "fieldname": "cb_set_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_assign",
+   "fieldtype": "Check",
+   "label": "Auto Assign New Tickets"
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_apply_sla",
+   "fieldtype": "Check",
+   "label": "Auto Apply SLA"
+  },
+  {
+   "default": "1",
+   "description": "When on, Priority is computed from the Impact/Urgency matrix on save.",
+   "fieldname": "derive_priority_from_impact_urgency",
+   "fieldtype": "Check",
+   "label": "Derive Priority From Impact & Urgency"
+  },
+  {
+   "fieldname": "sb_set_auto",
+   "fieldtype": "Section Break",
+   "label": "Automation"
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_close_enabled",
+   "fieldtype": "Check",
+   "label": "Auto Close Resolved Tickets"
+  },
+  {
+   "default": "3",
+   "depends_on": "auto_close_enabled",
+   "fieldname": "auto_close_after_days",
+   "fieldtype": "Int",
+   "label": "Auto Close After (days)"
+  },
+  {
+   "default": "75",
+   "fieldname": "reminder_before_breach_percent",
+   "fieldtype": "Int",
+   "label": "Send Breach Reminder At (% elapsed)"
+  },
+  {
+   "fieldname": "cb_set_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "5",
+   "description": "0 disables automatic problem creation.",
+   "fieldname": "auto_create_problem_threshold",
+   "fieldtype": "Int",
+   "label": "Auto Create Problem After N Similar Incidents"
+  },
+  {
+   "default": "1",
+   "fieldname": "suggest_knowledge_articles",
+   "fieldtype": "Check",
+   "label": "Suggest Knowledge Articles"
+  },
+  {
+   "default": "1",
+   "fieldname": "satisfaction_survey",
+   "fieldtype": "Check",
+   "label": "Send Satisfaction Survey On Close"
+  },
+  {
+   "fieldname": "sb_set_notify",
+   "fieldtype": "Section Break",
+   "label": "Notifications"
+  },
+  {
+   "default": "1",
+   "fieldname": "send_email_notifications",
+   "fieldtype": "Check",
+   "label": "Email Notifications"
+  },
+  {
+   "default": "1",
+   "fieldname": "send_system_notifications",
+   "fieldtype": "Check",
+   "label": "System Notifications"
+  },
+  {
+   "fieldname": "cb_set_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "notify_on_sla_breach",
+   "fieldtype": "Check",
+   "label": "Notify On SLA Breach"
+  },
+  {
+   "default": "1",
+   "fieldname": "notify_watchers",
+   "fieldtype": "Check",
+   "label": "Notify Watchers"
+  },
+  {
+   "fieldname": "sb_set_audit",
+   "fieldtype": "Section Break",
+   "label": "Audit"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_audit_log",
+   "fieldtype": "Check",
+   "label": "Enable Audit Log"
+  },
+  {
+   "default": "2555",
+   "description": "0 keeps audit entries forever. Default is 7 years for ISO 27001 / SOC2.",
+   "fieldname": "audit_retention_days",
+   "fieldtype": "Int",
+   "label": "Audit Retention (days)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:56.762863",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Service Desk Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Auditor"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

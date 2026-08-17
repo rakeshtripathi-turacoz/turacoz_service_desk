@@ -1,0 +1,238 @@
+{
+ "actions": [],
+ "autoname": "field:ci_name",
+ "creation": "2026-08-06 16:19:53.914252",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "ci_name",
+  "ci_type",
+  "environment",
+  "status",
+  "cb_ci_1",
+  "criticality",
+  "owner_user",
+  "support_team",
+  "linked_asset",
+  "sb_ci_tech",
+  "hostname",
+  "ip_address",
+  "operating_system",
+  "cb_ci_2",
+  "location",
+  "vendor",
+  "go_live_date",
+  "warranty_expiry",
+  "sb_ci_desc",
+  "description",
+  "relationships"
+ ],
+ "fields": [
+  {
+   "fieldname": "ci_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "ci_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Server\nApplication\nDatabase\nWebsite\nAPI\nFirewall\nStorage\nNetwork Device\nCloud VM\nLicense\nOther",
+   "reqd": 1
+  },
+  {
+   "default": "Production",
+   "fieldname": "environment",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Environment",
+   "options": "Production\nUAT\nDevelopment\nDR",
+   "reqd": 1
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nInactive\nUnder Maintenance\nRetired"
+  },
+  {
+   "fieldname": "cb_ci_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "criticality",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Criticality",
+   "options": "Low\nMedium\nHigh\nCritical"
+  },
+  {
+   "fieldname": "owner_user",
+   "fieldtype": "Link",
+   "label": "Owner",
+   "options": "User"
+  },
+  {
+   "fieldname": "support_team",
+   "fieldtype": "Link",
+   "label": "Support Team",
+   "options": "Service Desk Team"
+  },
+  {
+   "description": "Links this CI to the ERPNext Asset register.",
+   "fieldname": "linked_asset",
+   "fieldtype": "Link",
+   "label": "ERP Asset",
+   "options": "Asset"
+  },
+  {
+   "fieldname": "sb_ci_tech",
+   "fieldtype": "Section Break",
+   "label": "Technical"
+  },
+  {
+   "fieldname": "hostname",
+   "fieldtype": "Data",
+   "label": "Hostname"
+  },
+  {
+   "fieldname": "ip_address",
+   "fieldtype": "Data",
+   "label": "IP Address"
+  },
+  {
+   "fieldname": "operating_system",
+   "fieldtype": "Data",
+   "label": "Operating System"
+  },
+  {
+   "fieldname": "cb_ci_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "label": "Vendor",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "go_live_date",
+   "fieldtype": "Date",
+   "label": "Go Live Date"
+  },
+  {
+   "fieldname": "warranty_expiry",
+   "fieldtype": "Date",
+   "label": "Warranty / AMC Expiry"
+  },
+  {
+   "fieldname": "sb_ci_desc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "relationships",
+   "fieldtype": "Table",
+   "label": "Relationships",
+   "options": "CI Relationship"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:57.614285",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Configuration Item",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Engineer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Executive"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CISO"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "search_fields": "ci_type,environment,hostname",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "ci_name",
+ "track_changes": 1
+}

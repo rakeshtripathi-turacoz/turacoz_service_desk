@@ -1,0 +1,321 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-08-06 16:19:55.110738",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "incident_type",
+  "severity",
+  "status",
+  "cb_inc_1",
+  "is_security_incident",
+  "affected_service",
+  "affected_users",
+  "reported_by",
+  "incident_manager",
+  "problem",
+  "ticket",
+  "sb_inc_times",
+  "detection_time",
+  "reported_time",
+  "cb_inc_2",
+  "containment_time",
+  "resolution_time",
+  "sb_inc_impact",
+  "business_impact",
+  "sb_inc_actions",
+  "containment_actions",
+  "resolution",
+  "sb_inc_rca",
+  "root_cause",
+  "lessons_learned",
+  "cb_inc_3",
+  "capa",
+  "rca_document",
+  "sb_inc_related",
+  "related_records",
+  "timeline"
+ ],
+ "fields": [
+  {
+   "default": "INC-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "INC-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "incident_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Incident Type",
+   "options": "Outage\nDegradation\nSecurity\nData Breach\nData Loss\nMalware\nPhishing\nUnauthorized Access\nHardware Failure\nOther",
+   "reqd": 1
+  },
+  {
+   "default": "S3 - Medium",
+   "fieldname": "severity",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Severity",
+   "options": "S1 - Critical\nS2 - High\nS3 - Medium\nS4 - Low",
+   "reqd": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Open\nInvestigating\nContained\nMitigated\nResolved\nClosed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_inc_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "description": "Security incidents are visible to the CISO role and included in security reports.",
+   "fieldname": "is_security_incident",
+   "fieldtype": "Check",
+   "label": "Security Incident"
+  },
+  {
+   "fieldname": "affected_service",
+   "fieldtype": "Link",
+   "label": "Affected Service (CI)",
+   "options": "Configuration Item"
+  },
+  {
+   "fieldname": "affected_users",
+   "fieldtype": "Int",
+   "label": "Affected Users"
+  },
+  {
+   "fieldname": "reported_by",
+   "fieldtype": "Link",
+   "label": "Reported By",
+   "options": "User"
+  },
+  {
+   "fieldname": "incident_manager",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Incident Manager",
+   "options": "User"
+  },
+  {
+   "fieldname": "problem",
+   "fieldtype": "Link",
+   "label": "Problem",
+   "options": "Problem"
+  },
+  {
+   "fieldname": "sb_inc_times",
+   "fieldtype": "Section Break",
+   "label": "Timeline"
+  },
+  {
+   "fieldname": "detection_time",
+   "fieldtype": "Datetime",
+   "label": "Detected At"
+  },
+  {
+   "fieldname": "reported_time",
+   "fieldtype": "Datetime",
+   "label": "Reported At"
+  },
+  {
+   "fieldname": "cb_inc_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "containment_time",
+   "fieldtype": "Datetime",
+   "label": "Contained At"
+  },
+  {
+   "fieldname": "resolution_time",
+   "fieldtype": "Datetime",
+   "label": "Resolved At"
+  },
+  {
+   "fieldname": "sb_inc_impact",
+   "fieldtype": "Section Break",
+   "label": "Impact"
+  },
+  {
+   "fieldname": "business_impact",
+   "fieldtype": "Text",
+   "label": "Business Impact"
+  },
+  {
+   "fieldname": "sb_inc_actions",
+   "fieldtype": "Section Break",
+   "label": "Response"
+  },
+  {
+   "fieldname": "containment_actions",
+   "fieldtype": "Text",
+   "label": "Containment Actions"
+  },
+  {
+   "fieldname": "resolution",
+   "fieldtype": "Text",
+   "label": "Resolution"
+  },
+  {
+   "fieldname": "sb_inc_rca",
+   "fieldtype": "Section Break",
+   "label": "Root Cause Analysis"
+  },
+  {
+   "fieldname": "root_cause",
+   "fieldtype": "Text",
+   "label": "Root Cause"
+  },
+  {
+   "fieldname": "lessons_learned",
+   "fieldtype": "Text",
+   "label": "Lessons Learned"
+  },
+  {
+   "fieldname": "cb_inc_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "capa",
+   "fieldtype": "Text",
+   "label": "Corrective & Preventive Action (CAPA)"
+  },
+  {
+   "fieldname": "rca_document",
+   "fieldtype": "Attach",
+   "label": "RCA Document"
+  },
+  {
+   "fieldname": "sb_inc_related",
+   "fieldtype": "Section Break",
+   "label": "Related & Timeline"
+  },
+  {
+   "fieldname": "related_records",
+   "fieldtype": "Table",
+   "label": "Related Tickets",
+   "options": "Related Record"
+  },
+  {
+   "fieldname": "timeline",
+   "fieldtype": "Table",
+   "label": "Timeline",
+   "options": "Ticket Timeline",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ticket",
+   "fieldtype": "Link",
+   "label": "Originating Ticket",
+   "options": "Service Ticket",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:58.343226",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Incident",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Engineer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CISO",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Executive"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "search_fields": "incident_type,severity,status",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1,
+ "track_seen": 1
+}

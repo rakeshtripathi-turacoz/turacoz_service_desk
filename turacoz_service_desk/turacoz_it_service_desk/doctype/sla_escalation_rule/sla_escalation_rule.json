@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-06 16:19:52.053157",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "escalation_type",
+  "after_percent",
+  "escalate_to_role",
+  "escalate_to_user",
+  "increase_priority",
+  "notify_requester"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "default": "Resolution",
+   "fieldname": "escalation_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Applies To",
+   "options": "Response\nResolution",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "default": "75",
+   "description": "Fire when this much of the SLA window has been consumed.",
+   "fieldname": "after_percent",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Trigger At % Elapsed",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "escalate_to_role",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Escalate To Role",
+   "options": "Role"
+  },
+  {
+   "columns": 2,
+   "fieldname": "escalate_to_user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Escalate To User",
+   "options": "User"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "increase_priority",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Raise Priority"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "notify_requester",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Notify Requester"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:52.053157",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "SLA Escalation Rule",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

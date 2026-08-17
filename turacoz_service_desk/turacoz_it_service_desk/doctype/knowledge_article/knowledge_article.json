@@ -1,0 +1,271 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-08-06 16:19:54.114950",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "article_type",
+  "status",
+  "cb_kb_1",
+  "category",
+  "sub_category",
+  "is_public",
+  "version",
+  "sb_kb_content",
+  "content",
+  "video_url",
+  "attachment",
+  "sb_kb_meta",
+  "author",
+  "approved_by",
+  "approved_on",
+  "cb_kb_2",
+  "view_count",
+  "helpful_count",
+  "not_helpful_count",
+  "keywords",
+  "sb_kb_related",
+  "related_records"
+ ],
+ "fields": [
+  {
+   "default": "KB-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "KB-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "default": "How-To",
+   "fieldname": "article_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "FAQ\nHow-To\nVideo\nPolicy\nSOP\nKnown Error\nTroubleshooting",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nUnder Review\nPublished\nArchived"
+  },
+  {
+   "fieldname": "cb_kb_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "IT Service Category"
+  },
+  {
+   "fieldname": "sub_category",
+   "fieldtype": "Link",
+   "label": "Sub Category",
+   "options": "IT Service Category"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_public",
+   "fieldtype": "Check",
+   "label": "Visible On Portal"
+  },
+  {
+   "default": "1",
+   "fieldname": "version",
+   "fieldtype": "Int",
+   "label": "Version",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_kb_content",
+   "fieldtype": "Section Break",
+   "label": "Content"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Text Editor",
+   "label": "Content"
+  },
+  {
+   "depends_on": "eval:doc.article_type=='Video'",
+   "fieldname": "video_url",
+   "fieldtype": "Data",
+   "label": "Video URL"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "sb_kb_meta",
+   "fieldtype": "Section Break",
+   "label": "Ownership & Approval"
+  },
+  {
+   "fieldname": "author",
+   "fieldtype": "Link",
+   "label": "Author",
+   "options": "User"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_on",
+   "fieldtype": "Datetime",
+   "label": "Approved On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_kb_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "view_count",
+   "fieldtype": "Int",
+   "label": "Views",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "helpful_count",
+   "fieldtype": "Int",
+   "label": "Marked Helpful",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "not_helpful_count",
+   "fieldtype": "Int",
+   "label": "Marked Not Helpful",
+   "read_only": 1
+  },
+  {
+   "description": "Comma separated. Used by the auto-suggestion engine.",
+   "fieldname": "keywords",
+   "fieldtype": "Small Text",
+   "label": "Keywords"
+  },
+  {
+   "fieldname": "sb_kb_related",
+   "fieldtype": "Section Break",
+   "label": "Related Records"
+  },
+  {
+   "fieldname": "related_records",
+   "fieldtype": "Table",
+   "label": "Related Records",
+   "options": "Related Record"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:54.114950",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Knowledge Article",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Engineer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Executive",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "search_fields": "article_type,category,status",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

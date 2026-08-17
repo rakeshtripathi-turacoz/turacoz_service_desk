@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include turacoz_service_desk *.css
+recursive-include turacoz_service_desk *.csv
+recursive-include turacoz_service_desk *.html
+recursive-include turacoz_service_desk *.ico
+recursive-include turacoz_service_desk *.js
+recursive-include turacoz_service_desk *.json
+recursive-include turacoz_service_desk *.md
+recursive-include turacoz_service_desk *.png
+recursive-include turacoz_service_desk *.py
+recursive-include turacoz_service_desk *.svg
+recursive-include turacoz_service_desk *.txt
+recursive-exclude turacoz_service_desk *.pyc

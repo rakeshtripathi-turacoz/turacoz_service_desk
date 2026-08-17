@@ -1,0 +1,309 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-08-06 16:19:56.388802",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "requester",
+  "requested_for",
+  "request_type",
+  "status",
+  "cb_par_1",
+  "ticket",
+  "valid_from",
+  "valid_till",
+  "auto_revoke",
+  "sb_par_scope",
+  "access_scope",
+  "sb_par_just",
+  "business_justification",
+  "sb_par_approval",
+  "approval_matrix",
+  "approval_status",
+  "current_approval_level",
+  "approvals",
+  "sb_par_grant",
+  "granted_by",
+  "granted_on",
+  "cb_par_2",
+  "revoked_by",
+  "revoked_on",
+  "revocation_reason",
+  "sb_par_audit",
+  "audit_notes"
+ ],
+ "fields": [
+  {
+   "default": "PAR-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "PAR-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "requester",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Requester",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "requested_for",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Requested For",
+   "options": "User"
+  },
+  {
+   "fieldname": "request_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Primary Access Type",
+   "options": "ERP Admin\nSSH\nFirewall\nVPN\nAzure\nAWS\nDatabase\nGitHub\nOffice365\nDomain Admin\nOther",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nPending Approval\nApproved\nActive\nExpired\nRevoked\nRejected\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_par_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ticket",
+   "fieldtype": "Link",
+   "label": "Related Ticket",
+   "options": "Service Ticket"
+  },
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Datetime",
+   "label": "Valid From",
+   "reqd": 1
+  },
+  {
+   "description": "Access is revoked automatically at this time when Auto Revoke is on.",
+   "fieldname": "valid_till",
+   "fieldtype": "Datetime",
+   "label": "Valid Till",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_revoke",
+   "fieldtype": "Check",
+   "label": "Auto Revoke On Expiry"
+  },
+  {
+   "fieldname": "sb_par_scope",
+   "fieldtype": "Section Break",
+   "label": "Access Scope"
+  },
+  {
+   "fieldname": "access_scope",
+   "fieldtype": "Table",
+   "label": "Systems",
+   "options": "Privileged Access Scope",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sb_par_just",
+   "fieldtype": "Section Break",
+   "label": "Justification"
+  },
+  {
+   "fieldname": "business_justification",
+   "fieldtype": "Text",
+   "label": "Business Justification",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sb_par_approval",
+   "fieldtype": "Section Break",
+   "label": "Approval"
+  },
+  {
+   "fieldname": "approval_matrix",
+   "fieldtype": "Link",
+   "label": "Approval Matrix",
+   "options": "Approval Matrix"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "label": "Approval Status",
+   "options": "Not Required\nPending\nApproved\nRejected",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "current_approval_level",
+   "fieldtype": "Int",
+   "label": "Current Level",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approvals",
+   "fieldtype": "Table",
+   "label": "Approvals",
+   "options": "Approval History",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_par_grant",
+   "fieldtype": "Section Break",
+   "label": "Grant & Revocation"
+  },
+  {
+   "fieldname": "granted_by",
+   "fieldtype": "Link",
+   "label": "Granted By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "granted_on",
+   "fieldtype": "Datetime",
+   "label": "Granted On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_par_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revoked_by",
+   "fieldtype": "Link",
+   "label": "Revoked By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "revoked_on",
+   "fieldtype": "Datetime",
+   "label": "Revoked On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "revocation_reason",
+   "fieldtype": "Small Text",
+   "label": "Revocation Reason"
+  },
+  {
+   "fieldname": "sb_par_audit",
+   "fieldtype": "Section Break",
+   "label": "Audit"
+  },
+  {
+   "fieldname": "audit_notes",
+   "fieldtype": "Text",
+   "label": "Audit Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:56.388802",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Privileged Access Request",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CISO",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Engineer"
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Department Head"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "search_fields": "requester,request_type,status",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
+}

@@ -1,0 +1,169 @@
+{
+ "actions": [],
+ "autoname": "field:team_name",
+ "creation": "2026-08-06 16:19:53.011163",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "team_name",
+  "team_lead",
+  "email",
+  "cb_team_1",
+  "assignment_method",
+  "is_active",
+  "escalation_user",
+  "default_category",
+  "sb_team_members",
+  "members",
+  "sb_team_desc",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "team_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Team Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "team_lead",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Team Lead",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Team Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "cb_team_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Round Robin",
+   "description": "How the assignment engine picks an engineer from this team.",
+   "fieldname": "assignment_method",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Assignment Method",
+   "options": "Round Robin\nLoad Balancing\nSkill Based\nManual"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Active"
+  },
+  {
+   "fieldname": "escalation_user",
+   "fieldtype": "Link",
+   "label": "Escalation Contact",
+   "options": "User"
+  },
+  {
+   "fieldname": "sb_team_members",
+   "fieldtype": "Section Break",
+   "label": "Members"
+  },
+  {
+   "fieldname": "members",
+   "fieldtype": "Table",
+   "label": "Members",
+   "options": "Service Desk Team Member"
+  },
+  {
+   "fieldname": "sb_team_desc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "default_category",
+   "fieldtype": "Link",
+   "label": "Default Category",
+   "options": "IT Service Category"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:56.974343",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Service Desk Team",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Executive"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Engineer"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "search_fields": "team_lead",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "team_name",
+ "track_changes": 1
+}

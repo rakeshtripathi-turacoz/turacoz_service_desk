@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-06 16:19:54.574060",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "configuration_item",
+  "service_name",
+  "downtime_required",
+  "impact_notes"
+ ],
+ "fields": [
+  {
+   "columns": 3,
+   "fieldname": "configuration_item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Configuration Item",
+   "options": "Configuration Item"
+  },
+  {
+   "columns": 3,
+   "fieldname": "service_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Service"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "downtime_required",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Downtime"
+  },
+  {
+   "columns": 4,
+   "fieldname": "impact_notes",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Impact"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:54.574060",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Change Affected Service",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

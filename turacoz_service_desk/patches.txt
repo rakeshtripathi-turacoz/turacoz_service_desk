@@ -1,0 +1,7 @@
+# Patches applied in sequence by `bench migrate`.
+# Format: turacoz_service_desk.patches.<path>  (without .py)
+
+[pre_model_sync]
+
+[post_model_sync]
+turacoz_service_desk.patches.v1_0.fix_dashboard_filter_format

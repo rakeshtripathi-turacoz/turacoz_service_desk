@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-08-06 16:19:55.913534",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "ticket",
+  "comment_by",
+  "comment_type",
+  "commented_on",
+  "sb_cmt_content",
+  "content",
+  "attachment"
+ ],
+ "fields": [
+  {
+   "fieldname": "ticket",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Ticket",
+   "options": "Service Ticket",
+   "reqd": 1
+  },
+  {
+   "fieldname": "comment_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Comment By",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "default": "Public Note",
+   "fieldname": "comment_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Public Note\nInternal Note",
+   "reqd": 1
+  },
+  {
+   "fieldname": "commented_on",
+   "fieldtype": "Datetime",
+   "label": "Commented On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_cmt_content",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Text Editor",
+   "label": "Comment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:55.913534",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Ticket Comment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Engineer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Executive",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

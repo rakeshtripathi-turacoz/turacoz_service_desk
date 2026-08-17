@@ -1,0 +1,188 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-08-06 16:19:55.746631",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "ticket",
+  "engineer",
+  "activity_type",
+  "cb_wl_1",
+  "start_time",
+  "end_time",
+  "hours",
+  "is_billable",
+  "is_internal",
+  "sb_wl_desc",
+  "description",
+  "attachment"
+ ],
+ "fields": [
+  {
+   "default": "WL-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "WL-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ticket",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Ticket",
+   "options": "Service Ticket",
+   "reqd": 1
+  },
+  {
+   "fieldname": "engineer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Engineer",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "default": "Diagnosis",
+   "fieldname": "activity_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Activity",
+   "options": "Diagnosis\nImplementation\nTesting\nCommunication\nDocumentation\nTravel\nOther"
+  },
+  {
+   "fieldname": "cb_wl_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Start Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Datetime",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Hours",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_billable",
+   "fieldtype": "Check",
+   "label": "Billable"
+  },
+  {
+   "default": "0",
+   "description": "Internal work logs are hidden from the requester on the portal.",
+   "fieldname": "is_internal",
+   "fieldtype": "Check",
+   "label": "Internal Only"
+  },
+  {
+   "fieldname": "sb_wl_desc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:55.746631",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Work Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Engineer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Executive",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "search_fields": "ticket,engineer",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "autoname": "field:matrix_name",
+ "creation": "2026-08-06 16:19:53.391631",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "matrix_name",
+  "applies_to",
+  "is_active",
+  "cb_am_1",
+  "approval_mode",
+  "department",
+  "category",
+  "sb_am_cond",
+  "priority",
+  "risk_level",
+  "cb_am_2",
+  "min_amount",
+  "max_amount",
+  "sb_am_levels",
+  "levels"
+ ],
+ "fields": [
+  {
+   "fieldname": "matrix_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Matrix Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "Service Ticket",
+   "fieldname": "applies_to",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Applies To",
+   "options": "Service Ticket\nChange Request\nPrivileged Access Request\nService Catalog",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Active"
+  },
+  {
+   "fieldname": "cb_am_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Sequential",
+   "fieldname": "approval_mode",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Approval Mode",
+   "options": "Sequential\nParallel"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "sb_am_cond",
+   "fieldtype": "Section Break",
+   "label": "Match Conditions"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "\nLow\nMedium\nHigh\nCritical"
+  },
+  {
+   "fieldname": "risk_level",
+   "fieldtype": "Select",
+   "label": "Risk Level",
+   "options": "\nLow\nMedium\nHigh\nCritical"
+  },
+  {
+   "fieldname": "cb_am_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "min_amount",
+   "fieldtype": "Currency",
+   "label": "Minimum Amount"
+  },
+  {
+   "fieldname": "max_amount",
+   "fieldtype": "Currency",
+   "label": "Maximum Amount"
+  },
+  {
+   "fieldname": "sb_am_levels",
+   "fieldtype": "Section Break",
+   "label": "Approval Levels"
+  },
+  {
+   "fieldname": "levels",
+   "fieldtype": "Table",
+   "label": "Levels",
+   "options": "Approval Matrix Level",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "IT Service Category"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:57.399744",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Approval Matrix",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Department Head"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CISO"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "matrix_name",
+ "track_changes": 1
+}

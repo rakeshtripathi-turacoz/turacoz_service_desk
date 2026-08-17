@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-06 16:19:51.856770",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "priority",
+  "response_time",
+  "resolution_time"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nCritical",
+   "reqd": 1
+  },
+  {
+   "columns": 3,
+   "description": "Time allowed for first response.",
+   "fieldname": "response_time",
+   "fieldtype": "Duration",
+   "in_list_view": 1,
+   "label": "Response Time",
+   "reqd": 1
+  },
+  {
+   "columns": 3,
+   "description": "Time allowed to reach Resolved.",
+   "fieldname": "resolution_time",
+   "fieldtype": "Duration",
+   "in_list_view": 1,
+   "label": "Resolution Time",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:51.856770",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "SLA Priority Rule",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,266 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-08-06 16:19:54.672323",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "status",
+  "priority",
+  "cb_prb_1",
+  "category",
+  "assigned_to",
+  "identified_on",
+  "resolved_on",
+  "is_known_error",
+  "sb_prb_desc",
+  "description",
+  "sb_prb_analysis",
+  "incident_count",
+  "trend_analysis",
+  "root_cause",
+  "cb_prb_2",
+  "workaround",
+  "permanent_fix",
+  "sb_prb_closure",
+  "knowledge_article",
+  "change_request",
+  "closure_notes",
+  "sb_prb_related",
+  "related_records"
+ ],
+ "fields": [
+  {
+   "default": "PRB-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "PRB-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Open\nUnder Investigation\nKnown Error\nFix In Progress\nResolved\nClosed",
+   "reqd": 1
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nCritical"
+  },
+  {
+   "fieldname": "cb_prb_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "IT Service Category"
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Assigned To",
+   "options": "User"
+  },
+  {
+   "fieldname": "identified_on",
+   "fieldtype": "Date",
+   "label": "Identified On"
+  },
+  {
+   "fieldname": "resolved_on",
+   "fieldtype": "Date",
+   "label": "Resolved On",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_known_error",
+   "fieldtype": "Check",
+   "label": "Known Error"
+  },
+  {
+   "fieldname": "sb_prb_desc",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "sb_prb_analysis",
+   "fieldtype": "Section Break",
+   "label": "Analysis"
+  },
+  {
+   "default": "0",
+   "fieldname": "incident_count",
+   "fieldtype": "Int",
+   "label": "Linked Incident Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "trend_analysis",
+   "fieldtype": "Text",
+   "label": "Trend Analysis"
+  },
+  {
+   "fieldname": "root_cause",
+   "fieldtype": "Text",
+   "label": "Root Cause"
+  },
+  {
+   "fieldname": "cb_prb_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "workaround",
+   "fieldtype": "Text",
+   "label": "Workaround"
+  },
+  {
+   "fieldname": "permanent_fix",
+   "fieldtype": "Text",
+   "label": "Permanent Fix"
+  },
+  {
+   "fieldname": "sb_prb_closure",
+   "fieldtype": "Section Break",
+   "label": "Closure"
+  },
+  {
+   "fieldname": "knowledge_article",
+   "fieldtype": "Link",
+   "label": "Knowledge Article",
+   "options": "Knowledge Article"
+  },
+  {
+   "fieldname": "closure_notes",
+   "fieldtype": "Text",
+   "label": "Closure Notes"
+  },
+  {
+   "fieldname": "sb_prb_related",
+   "fieldtype": "Section Break",
+   "label": "Related Records"
+  },
+  {
+   "fieldname": "related_records",
+   "fieldtype": "Table",
+   "label": "Related Incidents & Tickets",
+   "options": "Related Record"
+  },
+  {
+   "fieldname": "change_request",
+   "fieldtype": "Link",
+   "label": "Change Request",
+   "options": "Change Request"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:57.847327",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Problem",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Engineer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Executive"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CISO"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "search_fields": "status,priority,category",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1,
+ "track_seen": 1
+}

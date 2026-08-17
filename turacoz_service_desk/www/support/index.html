@@ -1,0 +1,301 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ _("IT Service Desk") }}{% endblock %}
+
+{% block page_content %}
+<div class="service-desk-portal">
+	<div class="d-flex justify-content-between align-items-center flex-wrap mb-4">
+		<div>
+			<h1 class="mb-1">{{ _("IT Service Desk") }}</h1>
+			<p class="text-muted mb-0">
+				{{ _("Raise a request, track progress and search the knowledge base.") }}
+			</p>
+		</div>
+		<div class="text-right">
+			<span class="badge badge-primary p-2">{{ open_count }} {{ _("open") }}</span>
+			{% if awaiting_me %}
+			<span class="badge badge-warning p-2">{{ awaiting_me }} {{ _("need your input") }}</span>
+			{% endif %}
+		</div>
+	</div>
+
+	<ul class="nav nav-tabs mb-4" role="tablist">
+		<li class="nav-item">
+			<a class="nav-link active" data-toggle="tab" href="#new-request" role="tab">
+				{{ _("Raise a Request") }}
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" data-toggle="tab" href="#my-tickets" role="tab">
+				{{ _("My Tickets") }}
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" data-toggle="tab" href="#knowledge" role="tab">
+				{{ _("Knowledge Base") }}
+			</a>
+		</li>
+	</ul>
+
+	<div class="tab-content">
+		<!-- new request ------------------------------------------------ -->
+		<div class="tab-pane fade show active" id="new-request" role="tabpanel">
+			<form id="ticket-form">
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="service">{{ _("What do you need?") }}</label>
+						<select class="form-control" id="service">
+							<option value="">{{ _("Describe my own issue") }}</option>
+							{% for service in services %}
+							<option value="{{ service.name }}"
+								data-category="{{ service.category }}"
+								data-sub-category="{{ service.sub_category or '' }}"
+								data-priority="{{ service.default_priority or 'Medium' }}"
+								data-approval="{{ service.approval_required }}">
+								{{ service.service_name }}
+							</option>
+							{% endfor %}
+						</select>
+						<small class="form-text text-muted" id="service-hint"></small>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="category">{{ _("Category") }}</label>
+						<select class="form-control" id="category" required>
+							<option value="">{{ _("Select a category") }}</option>
+							{% for category in categories %}
+							{% if not category.is_group %}
+							<option value="{{ category.name }}"
+								data-parent="{{ category.parent_service_category or '' }}">
+								{{ category.parent_service_category and
+									category.parent_service_category ~ " / " or "" }}{{ category.category_name }}
+							</option>
+							{% endif %}
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="subject">{{ _("Subject") }}</label>
+					<input type="text" class="form-control" id="subject" maxlength="140" required
+						placeholder="{{ _('One line summary of the problem') }}">
+				</div>
+
+				<div class="form-group">
+					<label for="description">{{ _("Details") }}</label>
+					<textarea class="form-control" id="description" rows="5" required
+						placeholder="{{ _('What happened, when did it start, what have you tried?') }}"></textarea>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="ticket_type">{{ _("Type") }}</label>
+						<select class="form-control" id="ticket_type">
+							<option value="Incident">{{ _("Something is broken") }}</option>
+							<option value="Service Request" selected>{{ _("I need something") }}</option>
+							<option value="Query">{{ _("I have a question") }}</option>
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="impact">{{ _("How many people are affected?") }}</label>
+						<select class="form-control" id="impact">
+							<option value="Low">{{ _("Just me") }}</option>
+							<option value="Medium" selected>{{ _("My team") }}</option>
+							<option value="High">{{ _("The whole company") }}</option>
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="urgency">{{ _("How urgent is it?") }}</label>
+						<select class="form-control" id="urgency">
+							<option value="Low">{{ _("Can wait") }}</option>
+							<option value="Medium" selected>{{ _("Normal") }}</option>
+							<option value="High">{{ _("Blocking my work") }}</option>
+						</select>
+					</div>
+				</div>
+
+				<div id="suggested-articles" class="alert alert-info d-none"></div>
+
+				<button type="submit" class="btn btn-primary btn-lg">
+					{{ _("Submit Request") }}
+				</button>
+				<span id="ticket-form-status" class="ml-3 text-muted"></span>
+			</form>
+		</div>
+
+		<!-- my tickets ------------------------------------------------- -->
+		<div class="tab-pane fade" id="my-tickets" role="tabpanel">
+			{% if tickets %}
+			<div class="table-responsive">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>{{ _("Ticket") }}</th>
+							<th>{{ _("Subject") }}</th>
+							<th>{{ _("Status") }}</th>
+							<th>{{ _("Priority") }}</th>
+							<th>{{ _("Assigned To") }}</th>
+							<th>{{ _("Updated") }}</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for ticket in tickets %}
+						<tr>
+							<td><a href="/app/service-ticket/{{ ticket.name }}">{{ ticket.name }}</a></td>
+							<td>{{ ticket.subject }}</td>
+							<td>
+								<span class="badge badge-{{ 'success' if ticket.status in ('Resolved', 'Closed')
+									else 'warning' if ticket.status in ('Pending User', 'User Verification')
+									else 'info' }}">{{ _(ticket.status) }}</span>
+							</td>
+							<td>{{ _(ticket.priority) }}</td>
+							<td>{{ ticket.assigned_engineer or _("Unassigned") }}</td>
+							<td>{{ frappe.utils.pretty_date(ticket.modified) }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			{% else %}
+			<p class="text-muted">{{ _("You have not raised any tickets yet.") }}</p>
+			{% endif %}
+		</div>
+
+		<!-- knowledge base --------------------------------------------- -->
+		<div class="tab-pane fade" id="knowledge" role="tabpanel">
+			<div class="input-group mb-3">
+				<input type="text" class="form-control" id="kb-search"
+					placeholder="{{ _('Search how-to guides, FAQs and known errors') }}">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary" type="button" id="kb-search-btn">
+						{{ _("Search") }}
+					</button>
+				</div>
+			</div>
+			<div id="kb-results">
+				<div class="list-group">
+					{% for article in articles %}
+					<a class="list-group-item list-group-item-action"
+						href="/app/knowledge-article/{{ article.name }}">
+						<strong>{{ article.title }}</strong>
+						<span class="text-muted small"> - {{ article.article_type }}</span>
+					</a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+frappe.ready(() => {
+	const el = (id) => document.getElementById(id);
+
+	el("service").addEventListener("change", (event) => {
+		const option = event.target.selectedOptions[0];
+		if (!option.value) {
+			el("service-hint").textContent = "";
+			return;
+		}
+		el("category").value = option.dataset.subCategory || option.dataset.category || "";
+		el("service-hint").textContent = parseInt(option.dataset.approval)
+			? __("This service needs approval before work starts.")
+			: "";
+	});
+
+	let suggest_timer = null;
+	el("subject").addEventListener("keyup", () => {
+		clearTimeout(suggest_timer);
+		suggest_timer = setTimeout(suggest_articles, 600);
+	});
+
+	function suggest_articles() {
+		const subject = el("subject").value;
+		if (subject.length < 6) return;
+		frappe.call({
+			method: "turacoz_service_desk.turacoz_it_service_desk.api.ticket.suggest_articles",
+			args: { subject: subject, category: el("category").value, limit: 3 },
+			callback({ message }) {
+				const articles = (message && message.data) || [];
+				const box = el("suggested-articles");
+				if (!articles.length) {
+					box.classList.add("d-none");
+					return;
+				}
+				box.classList.remove("d-none");
+				box.innerHTML =
+					`<strong>${__("These may answer your question")}</strong><ul class="mb-0">` +
+					articles
+						.map(
+							(a) =>
+								`<li><a href="/app/knowledge-article/${a.name}" target="_blank">${frappe.utils.escape_html(
+									a.title
+								)}</a></li>`
+						)
+						.join("") +
+					"</ul>";
+			},
+		});
+	}
+
+	el("ticket-form").addEventListener("submit", (event) => {
+		event.preventDefault();
+		const status = el("ticket-form-status");
+		status.textContent = __("Submitting...");
+
+		frappe.call({
+			method: "turacoz_service_desk.turacoz_it_service_desk.api.ticket.create",
+			args: {
+				subject: el("subject").value,
+				description: el("description").value,
+				category: el("category").value,
+				service: el("service").value || undefined,
+				ticket_type: el("ticket_type").value,
+				impact: el("impact").value,
+				urgency: el("urgency").value,
+				source: "Portal",
+			},
+			callback({ message }) {
+				if (message && message.success) {
+					status.textContent = "";
+					frappe.msgprint({
+						title: __("Request Submitted"),
+						message: __("Your ticket {0} has been created.", [message.data.name]),
+						indicator: "green",
+					});
+					setTimeout(() => window.location.reload(), 1500);
+				} else {
+					const error = (message && message.error && message.error.message) ||
+						__("Could not submit the request.");
+					status.textContent = error;
+				}
+			},
+			error() {
+				status.textContent = __("Could not submit the request.");
+			},
+		});
+	});
+
+	el("kb-search-btn").addEventListener("click", () => {
+		frappe.call({
+			method: "turacoz_service_desk.turacoz_it_service_desk.api.itsm.search_knowledge",
+			args: { query: el("kb-search").value, limit: 20 },
+			callback({ message }) {
+				const articles = (message && message.data) || [];
+				el("kb-results").innerHTML = articles.length
+					? `<div class="list-group">${articles
+							.map(
+								(a) =>
+									`<a class="list-group-item list-group-item-action" href="/app/knowledge-article/${
+										a.name
+									}"><strong>${frappe.utils.escape_html(a.title)}</strong>
+									<span class="text-muted small"> - ${a.article_type}</span></a>`
+							)
+							.join("")}</div>`
+					: `<p class="text-muted">${__("No articles matched your search.")}</p>`;
+			},
+		});
+	});
+});
+</script>
+{% endblock %}

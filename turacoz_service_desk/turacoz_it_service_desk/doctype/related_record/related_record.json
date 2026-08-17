@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-06 16:19:52.614219",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reference_doctype",
+  "reference_name",
+  "relationship",
+  "notes"
+ ],
+ "fields": [
+  {
+   "columns": 3,
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "columns": 3,
+   "fieldname": "reference_name",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Record",
+   "options": "reference_doctype",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "default": "Related",
+   "fieldname": "relationship",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Relationship",
+   "options": "Related\nDuplicate Of\nCaused By\nBlocks\nBlocked By\nParent Of\nChild Of"
+  },
+  {
+   "columns": 4,
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:52.614219",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Related Record",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

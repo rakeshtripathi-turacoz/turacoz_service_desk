@@ -1,0 +1,140 @@
+{
+ "actions": [],
+ "autoname": "format:SKL-{engineer}-{category}",
+ "creation": "2026-08-06 16:19:53.734733",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "engineer",
+  "category",
+  "cb_skill_1",
+  "skill_level",
+  "is_certified",
+  "is_active",
+  "sb_skill_notes",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "engineer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Engineer",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "IT Service Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_skill_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Intermediate",
+   "fieldname": "skill_level",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Skill Level",
+   "options": "Beginner\nIntermediate\nExpert",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_certified",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Certified"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "sb_skill_notes",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:53.734733",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Engineer Skill",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Executive"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Engineer"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

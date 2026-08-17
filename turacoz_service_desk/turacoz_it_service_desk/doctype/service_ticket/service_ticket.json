@@ -1,0 +1,723 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-08-06 16:19:55.483992",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "subject",
+  "ticket_type",
+  "status",
+  "priority",
+  "cb_tkt_1",
+  "service",
+  "category",
+  "sub_category",
+  "source",
+  "department",
+  "sb_tkt_people",
+  "requester",
+  "requester_name",
+  "requested_for",
+  "cb_tkt_2",
+  "contact_number",
+  "requester_employee",
+  "sb_tkt_assign",
+  "assigned_team",
+  "assigned_engineer",
+  "engineer_name",
+  "cb_tkt_3",
+  "impact",
+  "urgency",
+  "severity",
+  "sb_tkt_desc",
+  "short_description",
+  "description",
+  "sb_tkt_sla",
+  "sla_policy",
+  "sla_status",
+  "response_by",
+  "resolution_by",
+  "first_responded_on",
+  "cb_tkt_4",
+  "response_sla_met",
+  "resolution_sla_met",
+  "total_hold_time",
+  "hold_started_on",
+  "is_escalated",
+  "escalation_level",
+  "sb_tkt_dates",
+  "opened_on",
+  "resolved_on",
+  "cb_tkt_5",
+  "closed_on",
+  "reopened_on",
+  "reopen_count",
+  "sb_tkt_approval",
+  "approval_status",
+  "approval_matrix",
+  "current_approval_level",
+  "approvals",
+  "sb_tkt_resolution",
+  "root_cause",
+  "resolution",
+  "resolution_category",
+  "knowledge_article",
+  "sb_tkt_feedback",
+  "feedback_rating",
+  "feedback_comments",
+  "sb_tkt_links",
+  "linked_asset",
+  "configuration_item",
+  "linked_project",
+  "cb_tkt_6",
+  "linked_incident",
+  "linked_problem",
+  "linked_change",
+  "sb_tkt_more_links",
+  "asset_links",
+  "related_records",
+  "watchers",
+  "sb_tkt_audit",
+  "timeline",
+  "sla_events",
+  "assignment_history",
+  "notifications_sent",
+  "sb_tkt_meta",
+  "total_worked_hours",
+  "tags"
+ ],
+ "fields": [
+  {
+   "default": "TKT-.YYYY.-.######",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "TKT-.YYYY.-.######",
+   "reqd": 1
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Subject",
+   "reqd": 1
+  },
+  {
+   "default": "Service Request",
+   "fieldname": "ticket_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Ticket Type",
+   "options": "Incident\nService Request\nChange Request\nProblem\nQuery",
+   "reqd": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nOpen\nAssigned\nIn Progress\nPending User\nPending Vendor\nTesting\nResolved\nUser Verification\nClosed\nReopened\nCancelled",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nCritical",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_tkt_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service (Catalog)",
+   "options": "Service Catalog"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Category",
+   "options": "IT Service Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sub_category",
+   "fieldtype": "Link",
+   "label": "Sub Category",
+   "options": "IT Service Category"
+  },
+  {
+   "default": "Portal",
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source",
+   "options": "Portal\nEmail\nPhone\nChat\nWalk-in\nAPI\nAuto"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "sb_tkt_people",
+   "fieldtype": "Section Break",
+   "label": "Requester"
+  },
+  {
+   "fieldname": "requester",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Requester",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "requester.full_name",
+   "fieldname": "requester_name",
+   "fieldtype": "Data",
+   "label": "Requester Name",
+   "read_only": 1
+  },
+  {
+   "description": "Set when raising a ticket on behalf of someone else.",
+   "fieldname": "requested_for",
+   "fieldtype": "Link",
+   "label": "Requested For",
+   "options": "User"
+  },
+  {
+   "fieldname": "cb_tkt_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "requester_employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "sb_tkt_assign",
+   "fieldtype": "Section Break",
+   "label": "Assignment"
+  },
+  {
+   "fieldname": "assigned_team",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Assigned Team",
+   "options": "Service Desk Team"
+  },
+  {
+   "fieldname": "assigned_engineer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Assigned Engineer",
+   "options": "User"
+  },
+  {
+   "fetch_from": "assigned_engineer.full_name",
+   "fieldname": "engineer_name",
+   "fieldtype": "Data",
+   "label": "Engineer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_tkt_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "impact",
+   "fieldtype": "Select",
+   "label": "Impact",
+   "options": "Low\nMedium\nHigh"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "urgency",
+   "fieldtype": "Select",
+   "label": "Urgency",
+   "options": "Low\nMedium\nHigh"
+  },
+  {
+   "fieldname": "severity",
+   "fieldtype": "Select",
+   "label": "Severity",
+   "options": "\nS1 - Critical\nS2 - High\nS3 - Medium\nS4 - Low"
+  },
+  {
+   "fieldname": "sb_tkt_desc",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "short_description",
+   "fieldtype": "Small Text",
+   "label": "Short Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Detailed Description"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_tkt_sla",
+   "fieldtype": "Section Break",
+   "label": "SLA"
+  },
+  {
+   "fieldname": "sla_policy",
+   "fieldtype": "Link",
+   "label": "SLA Policy",
+   "options": "SLA Policy",
+   "read_only": 1
+  },
+  {
+   "default": "Ongoing",
+   "fieldname": "sla_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "SLA Status",
+   "options": "Ongoing\nPaused\nFulfilled\nFailed\nResponse Overdue\nResolution Overdue\nNot Applicable",
+   "read_only": 1
+  },
+  {
+   "fieldname": "response_by",
+   "fieldtype": "Datetime",
+   "label": "Respond By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "resolution_by",
+   "fieldtype": "Datetime",
+   "label": "Resolve By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "first_responded_on",
+   "fieldtype": "Datetime",
+   "label": "First Responded On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_tkt_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "response_sla_met",
+   "fieldtype": "Check",
+   "label": "Response SLA Met",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "resolution_sla_met",
+   "fieldtype": "Check",
+   "label": "Resolution SLA Met",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_hold_time",
+   "fieldtype": "Duration",
+   "label": "Total Hold Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "hold_started_on",
+   "fieldtype": "Datetime",
+   "hidden": 1,
+   "label": "Hold Started On",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_escalated",
+   "fieldtype": "Check",
+   "label": "Escalated",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "escalation_level",
+   "fieldtype": "Int",
+   "label": "Escalation Level",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_tkt_dates",
+   "fieldtype": "Section Break",
+   "label": "Dates"
+  },
+  {
+   "fieldname": "opened_on",
+   "fieldtype": "Datetime",
+   "label": "Opened On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "resolved_on",
+   "fieldtype": "Datetime",
+   "label": "Resolved On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_tkt_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "closed_on",
+   "fieldtype": "Datetime",
+   "label": "Closed On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reopened_on",
+   "fieldtype": "Datetime",
+   "label": "Last Reopened On",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "reopen_count",
+   "fieldtype": "Int",
+   "label": "Reopen Count",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.approval_status && doc.approval_status!='Not Required'",
+   "fieldname": "sb_tkt_approval",
+   "fieldtype": "Section Break",
+   "label": "Approval"
+  },
+  {
+   "default": "Not Required",
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "label": "Approval Status",
+   "options": "Not Required\nPending\nApproved\nRejected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approval_matrix",
+   "fieldtype": "Link",
+   "label": "Approval Matrix",
+   "options": "Approval Matrix",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "current_approval_level",
+   "fieldtype": "Int",
+   "label": "Current Level",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approvals",
+   "fieldtype": "Table",
+   "label": "Approvals",
+   "options": "Approval History",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_tkt_resolution",
+   "fieldtype": "Section Break",
+   "label": "Resolution"
+  },
+  {
+   "fieldname": "root_cause",
+   "fieldtype": "Text",
+   "label": "Root Cause"
+  },
+  {
+   "fieldname": "resolution",
+   "fieldtype": "Text Editor",
+   "label": "Resolution"
+  },
+  {
+   "fieldname": "resolution_category",
+   "fieldtype": "Select",
+   "label": "Resolution Category",
+   "options": "\nFixed\nWorkaround Provided\nConfiguration Change\nUser Education\nNo Fault Found\nDuplicate\nCancelled"
+  },
+  {
+   "fieldname": "knowledge_article",
+   "fieldtype": "Link",
+   "label": "Knowledge Article Used",
+   "options": "Knowledge Article"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_tkt_feedback",
+   "fieldtype": "Section Break",
+   "label": "Feedback"
+  },
+  {
+   "fieldname": "feedback_rating",
+   "fieldtype": "Rating",
+   "label": "Rating",
+   "read_only": 1
+  },
+  {
+   "fieldname": "feedback_comments",
+   "fieldtype": "Small Text",
+   "label": "Feedback Comments",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_tkt_links",
+   "fieldtype": "Section Break",
+   "label": "Linked Records"
+  },
+  {
+   "fieldname": "linked_asset",
+   "fieldtype": "Link",
+   "label": "Asset",
+   "options": "Asset"
+  },
+  {
+   "fieldname": "configuration_item",
+   "fieldtype": "Link",
+   "label": "Configuration Item",
+   "options": "Configuration Item"
+  },
+  {
+   "fieldname": "linked_project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "cb_tkt_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "linked_incident",
+   "fieldtype": "Link",
+   "label": "Incident",
+   "options": "Incident"
+  },
+  {
+   "fieldname": "linked_problem",
+   "fieldtype": "Link",
+   "label": "Problem",
+   "options": "Problem"
+  },
+  {
+   "fieldname": "linked_change",
+   "fieldtype": "Link",
+   "label": "Change Request",
+   "options": "Change Request"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_tkt_more_links",
+   "fieldtype": "Section Break",
+   "label": "Assets & Related"
+  },
+  {
+   "fieldname": "asset_links",
+   "fieldtype": "Table",
+   "label": "Additional Assets",
+   "options": "Ticket Asset Link"
+  },
+  {
+   "fieldname": "related_records",
+   "fieldtype": "Table",
+   "label": "Related Records",
+   "options": "Related Record"
+  },
+  {
+   "fieldname": "watchers",
+   "fieldtype": "Table",
+   "label": "Watchers",
+   "options": "Ticket Watcher"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_tkt_audit",
+   "fieldtype": "Section Break",
+   "label": "History"
+  },
+  {
+   "fieldname": "timeline",
+   "fieldtype": "Table",
+   "label": "Timeline",
+   "options": "Ticket Timeline",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sla_events",
+   "fieldtype": "Table",
+   "label": "SLA Events",
+   "options": "SLA Event",
+   "read_only": 1
+  },
+  {
+   "fieldname": "assignment_history",
+   "fieldtype": "Table",
+   "label": "Assignment History",
+   "options": "Assignment History",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notifications_sent",
+   "fieldtype": "Table",
+   "label": "Notifications Sent",
+   "options": "Notification Sent",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_tkt_meta",
+   "fieldtype": "Section Break",
+   "label": "Metrics"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_worked_hours",
+   "fieldtype": "Float",
+   "label": "Total Worked Hours",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "description": "Comma separated.",
+   "fieldname": "tags",
+   "fieldtype": "Data",
+   "label": "Tags"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:55.483992",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Service Ticket",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Engineer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Executive",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Department Head"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CISO"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "search_fields": "status,priority,assigned_engineer,category",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "subject",
+ "track_changes": 1,
+ "track_seen": 1
+}

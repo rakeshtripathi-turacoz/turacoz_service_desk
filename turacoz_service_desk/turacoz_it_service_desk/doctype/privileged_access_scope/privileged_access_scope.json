@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-06 16:19:52.895152",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "system",
+  "target",
+  "access_level",
+  "notes"
+ ],
+ "fields": [
+  {
+   "columns": 3,
+   "fieldname": "system",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "System",
+   "options": "ERP Admin\nSSH\nFirewall\nVPN\nAzure\nAWS\nDatabase\nGitHub\nOffice365\nDomain Admin\nOther",
+   "reqd": 1
+  },
+  {
+   "columns": 4,
+   "description": "Server, database, repo or tenant the access applies to.",
+   "fieldname": "target",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Target / Host"
+  },
+  {
+   "columns": 2,
+   "default": "Read",
+   "fieldname": "access_level",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Access Level",
+   "options": "Read\nWrite\nAdmin\nRoot"
+  },
+  {
+   "columns": 3,
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:52.895152",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Privileged Access Scope",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

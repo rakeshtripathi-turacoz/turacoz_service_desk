@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-06 16:19:52.435496",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "event",
+  "event_time",
+  "details"
+ ],
+ "fields": [
+  {
+   "columns": 3,
+   "fieldname": "event",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Event",
+   "options": "SLA Applied\nResponse Met\nResponse Breached\nResolution Met\nResolution Breached\nPaused\nResumed\nEscalated\nReset"
+  },
+  {
+   "columns": 3,
+   "fieldname": "event_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Time"
+  },
+  {
+   "columns": 6,
+   "fieldname": "details",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:52.435496",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "SLA Event",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

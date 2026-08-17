@@ -1,0 +1,145 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-08-06 16:19:56.571320",
+ "description": "Immutable audit trail. Records cannot be edited or deleted through the UI.",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "timestamp",
+  "reference_doctype",
+  "reference_name",
+  "action",
+  "cb_aud_1",
+  "user",
+  "user_full_name",
+  "ip_address",
+  "browser",
+  "sb_aud_detail",
+  "details"
+ ],
+ "fields": [
+  {
+   "fieldname": "timestamp",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Timestamp",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type",
+   "options": "DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Record",
+   "options": "reference_doctype",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "action",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Action",
+   "options": "Created\nModified\nAssigned\nStatus Changed\nApproved\nRejected\nComment\nAttachment\nDeleted\nExported\nViewed\nEscalated\nSLA Event\nAccess Granted\nAccess Revoked\nAPI Call",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_aud_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "User",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "user_full_name",
+   "fieldtype": "Data",
+   "label": "User Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ip_address",
+   "fieldtype": "Data",
+   "label": "IP Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "browser",
+   "fieldtype": "Small Text",
+   "label": "User Agent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_aud_detail",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Code",
+   "label": "Details",
+   "options": "JSON",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:56.571320",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Service Desk Audit Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CISO"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

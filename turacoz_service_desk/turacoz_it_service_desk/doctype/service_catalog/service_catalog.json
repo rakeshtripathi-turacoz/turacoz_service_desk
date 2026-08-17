@@ -1,0 +1,215 @@
+{
+ "actions": [],
+ "autoname": "field:service_name",
+ "creation": "2026-08-06 16:19:54.299171",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service_name",
+  "category",
+  "sub_category",
+  "is_active",
+  "cb_svc_1",
+  "default_priority",
+  "sla_policy",
+  "department",
+  "cost_center",
+  "estimated_cost",
+  "sb_svc_desc",
+  "description",
+  "image",
+  "sb_svc_approval",
+  "approval_required",
+  "approval_matrix",
+  "sb_svc_docs",
+  "required_documents"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Service Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "IT Service Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sub_category",
+   "fieldtype": "Link",
+   "label": "Sub Category",
+   "options": "IT Service Category"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Active"
+  },
+  {
+   "fieldname": "cb_svc_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "default_priority",
+   "fieldtype": "Select",
+   "label": "Default Priority",
+   "options": "\nLow\nMedium\nHigh\nCritical"
+  },
+  {
+   "fieldname": "sla_policy",
+   "fieldtype": "Link",
+   "label": "SLA Policy",
+   "options": "SLA Policy"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "estimated_cost",
+   "fieldtype": "Currency",
+   "label": "Estimated Cost"
+  },
+  {
+   "fieldname": "sb_svc_desc",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Icon"
+  },
+  {
+   "fieldname": "sb_svc_approval",
+   "fieldtype": "Section Break",
+   "label": "Approval"
+  },
+  {
+   "default": "0",
+   "fieldname": "approval_required",
+   "fieldtype": "Check",
+   "label": "Approval Required"
+  },
+  {
+   "depends_on": "approval_required",
+   "fieldname": "approval_matrix",
+   "fieldtype": "Link",
+   "label": "Approval Matrix",
+   "options": "Approval Matrix"
+  },
+  {
+   "fieldname": "sb_svc_docs",
+   "fieldtype": "Section Break",
+   "label": "Required Documents"
+  },
+  {
+   "fieldname": "required_documents",
+   "fieldtype": "Table",
+   "label": "Required Documents",
+   "options": "Service Catalog Document"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:54.299171",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Service Catalog",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IT Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Team Lead",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Executive"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Service Desk Engineer"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor"
+  }
+ ],
+ "search_fields": "category,department",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "service_name",
+ "track_changes": 1
+}

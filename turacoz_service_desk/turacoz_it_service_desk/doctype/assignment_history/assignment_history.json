@@ -1,0 +1,67 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-06 16:19:54.480079",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "assigned_to",
+  "team",
+  "assigned_by",
+  "assigned_on",
+  "reason"
+ ],
+ "fields": [
+  {
+   "columns": 3,
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Assigned To",
+   "options": "User"
+  },
+  {
+   "columns": 2,
+   "fieldname": "team",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Team",
+   "options": "Service Desk Team"
+  },
+  {
+   "columns": 2,
+   "fieldname": "assigned_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Assigned By",
+   "options": "User"
+  },
+  {
+   "columns": 2,
+   "fieldname": "assigned_on",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Assigned On"
+  },
+  {
+   "columns": 3,
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Reason"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:54.480079",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Assignment History",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

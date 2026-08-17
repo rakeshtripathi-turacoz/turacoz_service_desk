@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-06 16:19:56.890892",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "relationship_type",
+  "configuration_item",
+  "notes"
+ ],
+ "fields": [
+  {
+   "columns": 3,
+   "fieldname": "relationship_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Relationship",
+   "options": "Depends On\nUsed By\nRuns On\nHosts\nConnected To\nPart Of\nBacked Up By",
+   "reqd": 1
+  },
+  {
+   "columns": 4,
+   "fieldname": "configuration_item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Configuration Item",
+   "options": "Configuration Item",
+   "reqd": 1
+  },
+  {
+   "columns": 5,
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:56.890892",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "CI Relationship",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

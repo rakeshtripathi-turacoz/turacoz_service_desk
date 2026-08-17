@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-06 16:19:52.268782",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "event_time",
+  "event_type",
+  "user",
+  "description",
+  "from_value",
+  "to_value"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "event_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Time",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "event_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Event",
+   "options": "Created\nStatus Change\nAssignment\nComment\nApproval\nSLA\nAttachment\nWork Log\nEscalation\nLinked Record\nOther"
+  },
+  {
+   "columns": 2,
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "User",
+   "options": "User"
+  },
+  {
+   "columns": 4,
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "from_value",
+   "fieldtype": "Data",
+   "label": "From"
+  },
+  {
+   "fieldname": "to_value",
+   "fieldtype": "Data",
+   "label": "To"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-06 16:19:52.268782",
+ "modified_by": "Administrator",
+ "module": "Turacoz IT Service Desk",
+ "name": "Ticket Timeline",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
